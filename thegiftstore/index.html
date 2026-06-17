@@ -3,130 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Gift Store - Personalized Gifting</title>
+    <title>The Gift Store | Personalized Gifting</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.6;
-            background-color: #fcfcfc;
+        /* CSS Reset & Variables */
+        :root {
+            --primary: #111111;
+            --secondary: #f4f4f4;
+            --accent: #d4af37; /* Gold accent */
+            --text: #333333;
+            --whatsapp: #25D366;
         }
-        .header {
-            background-color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            text-align: center;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Outfit', sans-serif; color: var(--text); background-color: #ffffff; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-            color: #111;
-            letter-spacing: -0.5px;
-        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: var(--primary); }
+        .nav-links a { margin-left: 30px; font-weight: 400; font-size: 15px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
         .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #ffe5e5 0%, #fdfbfb 100%);
+            padding: 100px 20px;
+            background: linear-gradient(rgba(244, 244, 244, 0.8), rgba(244, 244, 244, 0.8)), url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2000&auto=format&fit=crop') center/cover;
+            color: var(--primary);
         }
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: #222;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 54px; margin-bottom: 20px; max-width: 800px; }
+        .hero p { font-size: 20px; max-width: 600px; margin-bottom: 40px; color: #444; }
+        
         .whatsapp-btn {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
+            background-color: var(--whatsapp);
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
             font-size: 18px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-        .content-section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        .legal-box {
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+        .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4); }
+
+        /* About Section */
+        .about { padding: 80px 5%; text-align: center; background-color: #fff; }
+        .about h2 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
+        .about p { max-width: 800px; margin: 0 auto; font-size: 18px; color: #555; }
+
+        /* Products Section */
+        .products { padding: 80px 5%; background-color: var(--secondary); }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 50px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card {
+            background: #fff;
             border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
-            text-align: left;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
-        .legal-box h3 {
-            margin-top: 0;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-        }
-        .legal-details p {
-            margin: 8px 0;
-            font-size: 15px;
-        }
-        .footer {
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-        .footer a {
-            color: #aaa;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
-        }
-        .footer a:hover {
-            color: #fff;
+        .product-card:hover { transform: translateY(-10px); }
+        .product-image { width: 100%; height: 250px; object-fit: cover; }
+        .product-info { padding: 25px; text-align: center; }
+        .product-info h3 { font-size: 22px; margin-bottom: 10px; }
+        .product-info p { font-size: 15px; color: #666; margin-bottom: 20px; }
+
+        /* Contact & Legal Section */
+        .contact-legal { padding: 80px 5%; display: flex; flex-wrap: wrap; gap: 50px; justify-content: space-between; }
+        .contact-box { flex: 1; min-width: 300px; background: #fff; padding: 40px; border-radius: 12px; border: 1px solid #eaeaea; }
+        .contact-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 25px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block;}
+        .legal-details p { margin-bottom: 15px; font-size: 16px; color: #444; }
+        .legal-details strong { color: var(--primary); }
+
+        /* Footer */
+        .footer { background-color: var(--primary); color: #fff; text-align: center; padding: 40px 20px; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #ccc; margin: 0 15px; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .copyright { font-size: 14px; color: #888; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links { display: none; /* Simplify mobile nav */ }
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 16px; }
+            .contact-legal { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>The Gift Store</h1>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">The Gift Store</div>
+        <div class="nav-links">
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact & Details</a>
+        </div>
+    </nav>
 
-    <div class="hero">
-        <h2>Thoughtful gifts, made personal.</h2>
-        <p>Premium customized wallets, bracelets, rakhis, and accessories crafted just for you.</p>
-        <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn">🛍️ Order on WhatsApp</a>
-    </div>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Thoughtful gifts, crafted personally for you.</h1>
+        <p>Discover our premium collection of customized wallets, luxury bracelets, and festive rakhis.</p>
+        <!-- REPLACE THE NUMBER BELOW WITH YOUR EXACT WHATSAPP NUMBER -->
+        <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Order on WhatsApp
+        </a>
+    </header>
 
-    <div class="content-section">
-        <div class="legal-box">
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Our Story</h2>
+        <p>The Gift Store is a premium personalized gifting brand based in Bhayandar, Maharashtra, founded by Bhavana Choudhary. We believe that every gift should tell a story. That's why we pour our heart into creating beautifully customized wallets, intricate bracelets, and festive accessories that leave a lasting impression on your loved ones.</p>
+    </section>
+
+    <!-- Products Showcase -->
+    <section id="products" class="products">
+        <h2 class="section-title">Our Premium Collection</h2>
+        <div class="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <!-- Replace src with your Meesho photos -->
+                <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop" alt="Custom Name Wallet" class="product-image">
+                <div class="product-info">
+                    <h3>Custom Name Wallets</h3>
+                    <p>Luxurious faux leather wallets engraved with names and bespoke metallic charms.</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=600&auto=format&fit=crop" alt="Premium Bracelets" class="product-image">
+                <div class="product-info">
+                    <h3>Premium Bracelets</h3>
+                    <p>Elegant, skin-friendly metal bracelets customized with names or special dates.</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=600&auto=format&fit=crop" alt="Festive Rakhis" class="product-image">
+                <div class="product-info">
+                    <h3>Custom Rakhis</h3>
+                    <p>Celebrate the bond of love with our beautifully handcrafted customized Rakhis.</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599643477873-1cd5bd7f0580?q=80&w=600&auto=format&fit=crop" alt="Personalized Kadas" class="product-image">
+                <div class="product-info">
+                    <h3>Personalized Kadas</h3>
+                    <p>Stunning stainless steel Kadas engraved to perfection for a bold statement.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Legal Section -->
+    <section id="contact" class="contact-legal">
+        
+        <!-- Customer Contact -->
+        <div class="contact-box">
+            <h3>Get in Touch</h3>
+            <div class="legal-details">
+                <p>Have a question about an order or want to place a bulk gifting request? Our team is always here to help.</p>
+                <br>
+                <p><strong>Support Email:</strong> hello@thegiftstore.co.in</p>
+                <p><strong>WhatsApp Support:</strong> +91 XXXXXXXXXX</p>
+                <p><strong>Operating Hours:</strong> 10:00 AM - 7:00 PM (Mon-Sat)</p>
+            </div>
+        </div>
+
+        <!-- Meta Verification Details -->
+        <div class="contact-box" style="background-color: #fafafa;">
             <h3>Official Business Details</h3>
             <div class="legal-details">
                 <p><strong>Trade Name:</strong> The Gift Store</p>
                 <p><strong>Legal Proprietor Name:</strong> Bhavana Choudhary</p>
+                <!-- REPLACE THE GST NUMBER BELOW -->
+                <p><strong>GST Registration No:</strong> [YOUR_GST_NUMBER_HERE]</p>
                 <p><strong>Registered Address:</strong> Floor No.: 1ST, Building No./Flat No.: 104, NEW GANESH KRUPA CHSLTD, NAVGHAR X ROAD NO 5, OPP SHREERAM JEWELLERS, Bhayandar East, Mira Bhayandar, Thane, Maharashtra, PIN Code: 401105</p>
                 <p><strong>Constitution of Business:</strong> Proprietorship</p>
+                <p style="font-size: 13px; color: #777; margin-top: 15px;"><em>This information matches our official GST Registration Certificate as per Government of India regulations.</em></p>
             </div>
-            <p style="font-size: 13px; color: #777; margin-top: 20px;">This information matches our official GST Registration Certificate (Form GST REG-06) as per Government of India regulations.</p>
         </div>
-    </div>
 
-    <div class="footer">
-        <p>&copy; 2026 The Gift Store. All rights reserved.</p>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Refund & Cancellation Policy</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 The Gift Store. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

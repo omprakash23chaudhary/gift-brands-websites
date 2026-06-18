@@ -18,13 +18,19 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { background-color: var(--primary); } /* Restored black background so footer bounce is black */
         body { 
-            overflow-x: hidden; /* Only on body to prevent horizontal swipe without breaking vertical */
             font-family: 'Outfit', sans-serif; 
             color: var(--text); 
             background-color: #ffffff; 
             line-height: 1.6; 
             display: flex; 
             flex-direction: column; 
+            min-height: 100vh;
+        }
+        /* Wrap everything to hide mobile menu off-screen without breaking body scroll */
+        .page-wrapper {
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
         a { text-decoration: none; color: inherit; }
@@ -117,7 +123,7 @@
     </style>
 </head>
 <body>
-
+<div class="page-wrapper">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="index.html" class="logo"><img src="logo.png" alt="The Gift Store" onerror="this.style.display='none'; this.parentElement.innerText='The Gift Store'"></a>
@@ -255,5 +261,6 @@
             }
         });
     </script>
+</div>
 </body>
 </html>

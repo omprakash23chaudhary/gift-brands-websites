@@ -16,9 +16,19 @@
             --whatsapp: #25D366;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Outfit', sans-serif; color: var(--text); background-color: #ffffff; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        html { background-color: var(--primary); } /* Fixes white gap below footer on mobile bounce */
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            color: var(--text); 
+            background-color: #ffffff; 
+            line-height: 1.6; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+            overscroll-behavior-y: none; /* Disables mobile rubber-banding effect */
+        }
         a { text-decoration: none; color: inherit; }
-        main { flex: 1; }
+        main { flex: 1; background-color: #ffffff; }
         
         /* Navigation & Hamburger */
         .navbar {
@@ -85,7 +95,10 @@
         
         .whatsapp-btn { background-color: var(--whatsapp); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
         
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .products { padding: 40px 0; background-color: var(--secondary); }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 40px; color: var(--primary); }
+        
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 5%; max-width: 1200px; margin: 0 auto; }
         .product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .product-image { width: 100%; height: 250px; object-fit: cover; }
         .product-info { padding: 25px; text-align: center; }
@@ -129,6 +142,8 @@
     <div class="page-header">
         <h1>Our Premium Collection</h1>
     </div>
+    <div style="padding: 40px 0; background-color: var(--secondary);">
+        
     <div class="product-grid">
         <div class="product-card">
             <img src="wallet.jpeg" alt="Custom Name Wallet" class="product-image">
@@ -179,6 +194,8 @@
                 <p>Our most exclusive gift set: A sketched wallet paired with a premium customized pen and keychain.</p>
             </div>
         </div>
+    </div>
+
     </div>
         
     </main>

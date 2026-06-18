@@ -16,9 +16,19 @@
             --whatsapp: #25D366;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Outfit', sans-serif; color: var(--text); background-color: #ffffff; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        html { background-color: var(--primary); } /* Fixes white gap below footer on mobile bounce */
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            color: var(--text); 
+            background-color: #ffffff; 
+            line-height: 1.6; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+            overscroll-behavior-y: none; /* Disables mobile rubber-banding effect */
+        }
         a { text-decoration: none; color: inherit; }
-        main { flex: 1; }
+        main { flex: 1; background-color: #ffffff; }
         
         /* Navigation & Hamburger */
         .navbar {
@@ -85,7 +95,10 @@
         
         .whatsapp-btn { background-color: var(--whatsapp); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
         
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .products { padding: 40px 0; background-color: var(--secondary); }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 40px; color: var(--primary); }
+        
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 5%; max-width: 1200px; margin: 0 auto; }
         .product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .product-image { width: 100%; height: 250px; object-fit: cover; }
         .product-info { padding: 25px; text-align: center; }
@@ -134,6 +147,76 @@
             Order on WhatsApp
         </a>
     </header>
+    
+    <section class="products">
+        <h2 class="section-title">Our Premium Collection</h2>
+        
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="wallet.jpeg" alt="Custom Name Wallet" class="product-image">
+            <div class="product-info">
+                <h3>Custom Name Wallets</h3>
+                <p>Luxurious faux leather wallets engraved with names and bespoke metallic charms.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="bracelet.jpg" alt="Premium Bracelets" class="product-image">
+            <div class="product-info">
+                <h3>Premium Bracelets</h3>
+                <p>Elegant, skin-friendly metal bracelets customized with names or special dates.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="rakhi.jpg" alt="Festive Rakhis" class="product-image">
+            <div class="product-info">
+                <h3>Custom Rakhis</h3>
+                <p>Celebrate the bond of love with our beautifully handcrafted customized Rakhis.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="kada.jpg" alt="Personalized Kadas" class="product-image">
+            <div class="product-info">
+                <h3>Personalized Kadas</h3>
+                <p>Stunning stainless steel Kadas engraved to perfection for a bold statement.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="wallet-combo.jpg" alt="Custom Name Wallet Combo" class="product-image">
+            <div class="product-info">
+                <h3>Name Wallet Combo</h3>
+                <p>The ultimate premium gift set featuring a matching customized wallet, pen, and keychain.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="sketch-wallet.jpg" alt="Sketch Wallet" class="product-image">
+            <div class="product-info">
+                <h3>Sketch Wallets</h3>
+                <p>A beautiful hand-drawn sketch of your loved one, permanently engraved onto a premium wallet.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="sketch-wallet-combo.jpg" alt="Sketch Wallet Combo" class="product-image">
+            <div class="product-info">
+                <h3>Sketch Wallet Combo</h3>
+                <p>Our most exclusive gift set: A sketched wallet paired with a premium customized pen and keychain.</p>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+    <section class="about" style="background-color: #fff; padding-top: 60px;">
+        <h2 class="section-title">Our Story</h2>
+        
+    <div class="page-content" style="text-align: center; padding-bottom: 60px;">
+        <p style="font-size: 18px; color: #555; line-height: 1.8;">The Gift Store is a premium personalized gifting brand based in Bhayandar, Maharashtra, proudly founded by Bhavana Choudhary.</p>
+        <br>
+        <p style="font-size: 18px; color: #555; line-height: 1.8;">We believe that every gift should tell a unique story. That's why we pour our heart into creating beautifully customized wallets, intricate metal bracelets, custom name kadas, and festive accessories that leave a lasting impression on your loved ones.</p>
+        <br>
+        <p style="font-size: 18px; color: #555; line-height: 1.8;">Whether it's a birthday, anniversary, or corporate event, our mission is to deliver joy through unparalleled craftsmanship and personal touch.</p>
+    </div>
+
+    </section>
         
     </main>
 

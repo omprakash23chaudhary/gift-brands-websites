@@ -16,21 +16,16 @@
             --whatsapp: #25D366;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body {
-            overflow-x: hidden; /* Prevents horizontal swipe from off-screen menus */
-            width: 100%;
-            max-width: 100vw;
-        }
+        html { background-color: var(--primary); } /* Restored black background so footer bounce is black */
         body { 
+            overflow-x: hidden; /* Only on body to prevent horizontal swipe without breaking vertical */
             font-family: 'Outfit', sans-serif; 
             color: var(--text); 
             background-color: #ffffff; 
             line-height: 1.6; 
             display: flex; 
             flex-direction: column; 
-            min-height: 100vh; /* Fallback for old browsers */
-            min-height: 100dvh; /* Industry standard dynamic viewport height for mobile */
-            overscroll-behavior-y: none; /* Stops the vertical rubber-banding bounce */
+            min-height: 100vh;
         }
         a { text-decoration: none; color: inherit; }
         main { flex: 1; background-color: #ffffff; }

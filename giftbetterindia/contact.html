@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Better India | Contact Us</title>
+    <link rel="icon" type="image/png" href="/logo.png">
+    <!-- Google Fonts for Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary: #111111;
+            --secondary: #f4f4f4;
+            --accent: #d4af37;
+            --text: #333333;
+            --whatsapp: #25D366;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { background-color: var(--primary); } /* Restored black background so footer bounce is black */
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            color: var(--text); 
+            background-color: #ffffff; 
+            line-height: 1.6; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+        }
+        /* Wrap everything to hide mobile menu off-screen without breaking body scroll */
+        .page-wrapper {
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        a { text-decoration: none; color: inherit; }
+        main { flex: 1; background-color: #ffffff; }
+        
+        /* Navigation & Hamburger */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img { height: 50px; object-fit: contain; }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a { margin-left: 30px; font-weight: 400; font-size: 15px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                right: -100%;
+                background-color: #fff;
+                flex-direction: column;
+                width: 250px;
+                box-shadow: -5px 5px 15px rgba(0,0,0,0.05);
+                transition: right 0.3s ease;
+                padding: 20px 0;
+                border-bottom-left-radius: 12px;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { margin: 15px 0; font-size: 18px; text-align: center; width: 100%; }
+        }
+
+        /* Common Page Styles */
+        .page-header { padding: 60px 20px 30px; text-align: center; background-color: var(--secondary); }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--primary); }
+        .page-content { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        /* Specific Sections */
+        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 20px; background: linear-gradient(rgba(244, 244, 244, 0.8), rgba(244, 244, 244, 0.8)), url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2000&auto=format&fit=crop') center/cover; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 54px; margin-bottom: 20px; max-width: 800px; }
+        .hero p { font-size: 20px; max-width: 600px; margin-bottom: 40px; color: #444; }
+        
+        .whatsapp-btn { background-color: var(--whatsapp); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+        
+        .products { padding: 40px 0; background-color: var(--secondary); }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 40px; color: var(--primary); }
+        
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 5%; max-width: 1200px; margin: 0 auto; }
+        .product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .product-image { width: 100%; height: 250px; object-fit: cover; }
+        .product-info { padding: 25px; text-align: center; }
+        
+        .contact-legal { padding: 40px 5%; display: flex; flex-wrap: wrap; gap: 50px; justify-content: center; max-width: 1200px; margin: 0 auto; }
+        .contact-box { flex: 1; min-width: 300px; max-width: 500px; background: #fff; padding: 40px; border-radius: 12px; border: 1px solid #eaeaea; }
+        .contact-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block;}
+        .legal-details p { margin-bottom: 15px; font-size: 16px; color: #444; }
+        
+        /* Footer */
+        .footer { background-color: var(--primary); color: #fff; text-align: center; padding: 40px 20px; margin-top: auto; }
+        .footer-links { margin-bottom: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .footer-links a { color: #ccc; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .copyright { font-size: 14px; color: #888; }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/" class="logo"><img src="logo.png" alt="Gift Better India" onerror="this.style.display='none'; this.parentElement.innerText='Gift Better India'"></a>
+        
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+            <a href="/">Home</a>
+            <a href="/products">Products</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact & Details</a>
+        </div>
+    </nav>
+
+    <main>
+
+    <div class="page-header">
+        <h1>Contact & Legal Details</h1>
+    </div>
+    <div class="contact-legal">
+        <!-- Customer Contact -->
+        <div class="contact-box">
+            <h3>Get in Touch</h3>
+            <div class="legal-details">
+                <p>Whether you need assistance with an ongoing order or wish to discuss large-scale corporate gifting, we are ready to assist you.</p>
+                <br>
+                <p><strong>Support Email:</strong> support@giftbetter.in</p>
+                <p><strong>WhatsApp Support:</strong> +91 9833002282</p>
+                <p><strong>Operating Hours:</strong> 10:00 AM - 7:00 PM (Mon-Sat)</p>
+            </div>
+        </div>
+
+        <!-- Official Details -->
+        <div class="contact-box" style="background-color: #fafafa;">
+            <h3>Official Business Details</h3>
+            <div class="legal-details">
+                <p><strong>Trade Name:</strong> Gift Better India</p>
+                <p><strong>Legal Proprietor Name:</strong> OMPRAKASH GOPARAM CHAUDHARY</p>
+                <p><strong>Proprietor Contact:</strong> +91 9833118499</p>
+                <p><strong>GST Registration No:</strong> 27BCNPC1163L1ZI</p>
+                <p><strong>Registered Address:</strong> Floor No.: 01, Building No./Flat No.: Flat No.104, New Ganesh Krupra, Navghar Cross Road No.5, Opp Shree Ram Jewellers, Bhayandar East, Mira Bhayandar, Thane, Maharashtra, PIN Code: 401105</p>
+            </div>
+        </div>
+    </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/refund">Refund & Cancellation Policy</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 Gift Better India. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle Logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu on scroll
+        window.addEventListener('scroll', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

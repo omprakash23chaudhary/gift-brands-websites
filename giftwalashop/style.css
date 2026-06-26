@@ -1,9 +1,9 @@
 /* CSS Reset & Variables */
 :root {
-    --primary: #4A0404; /* Dark Burgundy */
-    --primary-light: #701C1C;
-    --accent: #D4AF37; /* Gold */
-    --accent-hover: #F3E5AB;
+    --primary: #003E49; /* Dark Burgundy */
+    --primary-light: #005A6B;
+    --accent: #FBDBC7; /* Gold */
+    --accent-hover: #FCE6D8;
     --text-main: #333333;
     --bg-light: #FAF9F6; /* Off-white */
     --whatsapp: #25D366;

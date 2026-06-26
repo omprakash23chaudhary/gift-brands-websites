@@ -21,6 +21,14 @@ body {
     min-height: 100vh;
 }
 a { text-decoration: none; color: inherit; }
+/* Wrap everything to hide mobile menu off-screen without breaking body scroll */
+.page-wrapper {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 
 /* Navigation */
 .navbar {

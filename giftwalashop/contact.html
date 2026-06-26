@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Gift Wala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .contact-box {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        @media (max-width: 600px) {
+            .contact-info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="logo">GIFT WALA</a>
+        <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+        <div class="nav-links" id="nav-links">
+            <a href="/">Home</a>
+            <a href="/products.html">Collections</a>
+            <a href="/about.html">Our Story</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Get In Touch</h1>
+            <p>We're here to help you find the perfect gift.</p>
+        </div>
+        <div class="page-content">
+            <h2>Reach Out to Our Team</h2>
+            <p>Whether you have a question about an ongoing order, bulk corporate gifting, or just need help picking the right product, our dedicated support team is just a message away.</p>
+            
+            <a href="https://wa.me/919833002282" target="_blank" class="whatsapp-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.738 10.564 10.563 0 5.827-4.739 10.565-10.564 10.565z"/>
+                </svg>
+                Message us on WhatsApp
+            </a>
+
+            <div class="contact-info-grid">
+                <div class="contact-box">
+                    <h3>Contact Numbers</h3>
+                    <p><strong>Support & Orders:</strong> +91 9833002282</p>
+                    <p><strong>Official Inquiries:</strong> +91 9136908499</p>
+                </div>
+                <div class="contact-box">
+                    <h3>Business Details</h3>
+                    <p><strong>Operated By:</strong> KISHAN CHATARARAM CHOUDHARY</p>
+                    <p><strong>Trade Name:</strong> GIFT WALA</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Registered Office Address</h3>
+            <p>
+                2nd Floor, C-211, Sai Sagar CHS LTD<br>
+                Navghar Road, Bunderwadi (Behind Municipal School)<br>
+                Bhayandar East, Mira Bhayandar<br>
+                Thane, Maharashtra - 401105
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Gift Wala</h4>
+                <p>Curating exceptional personalized gifts that speak straight to the heart. Your memories, beautifully crafted.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/products.html">Collections</a>
+                <a href="/about.html">About Gift Wala</a>
+                <a href="/contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/refund.html">Cancellation & Refunds</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Gift Wala. Operated by KISHAN CHATARARAM CHOUDHARY. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+</html>

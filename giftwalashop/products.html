@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | Gift Wala</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 60px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #F0F0F0;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(74, 4, 4, 0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent);
+        }
+        .product-info {
+            padding: 30px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-info h3 {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .product-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        .buy-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .buy-btn:hover { background-color: var(--accent); color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar">
+        <a href="/" class="logo">GIFT WALA</a>
+        <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+        <div class="nav-links" id="nav-links">
+            <a href="/">Home</a>
+            <a href="/products.html">Collections</a>
+            <a href="/about.html">Our Story</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Our Exclusive Collections</h1>
+            <p>Thoughtfully personalized to elevate your gifting experience.</p>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="wallet.jpeg" alt="Signature Name Wallet" class="product-image">
+                <div class="product-info">
+                    <h3>The Signature Name Wallet</h3>
+                    <p>A sophisticated vegan leather wallet featuring an elegantly embossed name and a customized metal charm. The perfect blend of utility and personal touch.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="bracelet.jpg" alt="Custom Engraved Cuff" class="product-image">
+                <div class="product-info">
+                    <h3>Custom Engraved Cuff Bracelet</h3>
+                    <p>A sleek, minimalist metallic band designed to carry a secret message, date, or name. A timeless accessory for everyday wear.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="rakhi.jpg" alt="Premium Personalized Rakhi" class="product-image">
+                <div class="product-info">
+                    <h3>Premium Personalized Rakhi</h3>
+                    <p>Celebrate the bond of siblinghood with a beautiful, custom-crafted Rakhi thread bearing your brother's name in exquisite lettering.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="kada.jpg" alt="Heavyweight Identity Kada" class="product-image">
+                <div class="product-info">
+                    <h3>Heavyweight Identity Kada</h3>
+                    <p>A robust and bold stainless steel kada, deeply laser-engraved with your chosen text. Built to last a lifetime and make a strong statement.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="wallet-combo.jpg" alt="The Executive Gift Set" class="product-image">
+                <div class="product-info">
+                    <h3>The Executive Gift Set</h3>
+                    <p>An elite trio containing a personalized wallet, a premium engraved pen, and a custom keychain. The ultimate corporate or luxury gift.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="sketch-wallet.jpg" alt="Photorealistic Sketch Wallet" class="product-image">
+                <div class="product-info">
+                    <h3>Photorealistic Sketch Wallet</h3>
+                    <p>Watch your favorite memory come to life. We etch a highly detailed portrait of your loved one directly onto the wallet's surface.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="sketch-wallet-combo.jpg" alt="The Royal Sketch Combo" class="product-image">
+                <div class="product-info">
+                    <h3>The Royal Sketch Combo</h3>
+                    <p>Our most prestigious offering. A beautiful portrait-engraved wallet accompanied by a matching personalized pen and keychain.</p>
+                    <a href="https://wa.me/919833002282" target="_blank" class="buy-btn">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Gift Wala</h4>
+                <p>Curating exceptional personalized gifts that speak straight to the heart. Your memories, beautifully crafted.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/products.html">Collections</a>
+                <a href="/about.html">About Gift Wala</a>
+                <a href="/contact.html">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/refund.html">Cancellation & Refunds</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Gift Wala. Operated by KISHAN CHATARARAM CHOUDHARY. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+</html>

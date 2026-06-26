@@ -36,8 +36,8 @@ a { text-decoration: none; color: inherit; }
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background-color: var(--primary);
-    color: #fff;
+    background-color: var(--accent);
+    color: var(--primary);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -51,7 +51,7 @@ a { text-decoration: none; color: inherit; }
 .nav-links a:hover { color: var(--primary-light); }
 
 .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
-.hamburger div { width: 30px; height: 2px; background-color: var(--accent); transition: 0.3s; }
+.hamburger div { width: 30px; height: 2px; background-color: var(--primary); transition: 0.3s; }
 
 @media (max-width: 768px) {
     .hamburger { display: flex; }
@@ -98,7 +98,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Buttons */
 .btn-primary {
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: var(--accent);
     padding: 16px 40px;
     font-size: 15px;
@@ -137,7 +137,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Footer */
 .footer {
-    background-color: var(--primary);
+    background-color: var(--accent);
     color: var(--primary);
     padding: 60px 5% 30px;
     margin-top: auto;
@@ -152,7 +152,7 @@ a { text-decoration: none; color: inherit; }
 }
 .footer-col h4 {
     font-family: var(--font-heading);
-    color: var(--accent);
+    color: var(--primary);
     font-size: 22px;
     margin-bottom: 20px;
 }

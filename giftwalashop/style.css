@@ -1,7 +1,7 @@
 /* CSS Reset & Variables */
 :root {
-    --primary: #003E49; /* Dark Burgundy */
-    --primary-light: #005A6B;
+    --primary: #23160F; /* Dark Burgundy */
+    --primary-light: #3F291D;
     --accent: #FBDBC7; /* Gold */
     --accent-hover: #FCE6D8;
     --text-main: #333333;
